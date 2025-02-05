@@ -65,32 +65,20 @@ def merge_all_vector_layers_and_export():
         file_dialog = QFileDialog()
         file_dialog.setDefaultSuffix("svg")
         save_path, _ = file_dialog.getSaveFileName(None, "Save Merged Vector Layer as SVG", "", "SVG Files (*.svg)")
-        
-        print(merged_layer)
-        print(f"{merged_layer.name()}")
-        print(f"{merged_layer.type()}")
-        print(dir(merged_layer))
-        svg = merged_layer.toSvg()
-        #print(f"SVG:  ", svg)
+        save_path = ''.join(save_path)
 
-        save_path_2 = ''.join(save_path)
-        print(f"{save_path_2}")
-        # Open the file in write mode ('w'). This will create the file if it doesn't exist or overwrite it if it does.
-        with open(save_path_2, "w") as file:
-            file.writelines(svg)
-        file.close()
-    
-        if not save_path:
-            # **Fix: Use an empty `InfoObject()` instead of `exportConfiguration()`**
-            export_config = InfoObject()  # Krita's expected empty export configuration
-            #success = merged_layer.save(save_path, 72, 72, export_config)
-            #success = merged_layer.saveVectorLayerAsImage(save_path[0], 300, False)
-            #success = merged_layer.XXXXXXX(save_path, 72, 72, export_config)
- 
-            if success:
+        # Validate file
+        if not save_path=="":
+            # Convert the layer to an SVG XML string
+            svg = merged_layer.toSvg()
+            try:
+                # Try and save the SVG
+                with open(save_path, "w") as file:
+                    file.writelines(svg)
+                file.close()
                 print(f"SVG exported successfully: {save_path}")
-            else:
-                print("Error: SVG export failed.")
+            except Exception as e:
+                print("ERROR: SVG export failed.")
 
         else:
             print("SVG export cancelled.")
