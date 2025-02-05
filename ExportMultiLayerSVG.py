@@ -68,20 +68,25 @@ def merge_all_vector_layers_and_export():
         save_path = ''.join(save_path)
 
         # Validate file
-        if not save_path=="":
+        if save_path:
             # Convert the layer to an SVG XML string
             svg = merged_layer.toSvg()
             try:
                 # Try and save the SVG
                 with open(save_path, "w") as file:
                     file.writelines(svg)
-                file.close()
                 print(f"SVG exported successfully: {save_path}")
             except Exception as e:
-                print("ERROR: SVG export failed.")
+                print(f"ERROR: SVG export failed. {e}")
 
         else:
             print("SVG export cancelled.")
+
+        # Remove the temporary "Merged Vector Layers" group
+        print("Removing temporary merged layer group...")
+        root.removeChildNode(group_layer)  # Remove the group from the document
+        doc.refreshProjection()
+        print("Temporary merged group deleted.")
 
     else:
         print("Error: No merged vector layer found.")
