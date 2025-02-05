@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=KritaSvgMerge
+X-Krita-Manual=KritaSvgMerge
+X-Krita-Author=Simon Heggie
+X-Krita-Version=1.0
+X-Krita-Category=Export
+X-Krita-Name=Merge SVG Layers
+X-Krita-Description=Merges all vector layers and exports as an SVG
+X-Krita-EnabledByDefault=true
