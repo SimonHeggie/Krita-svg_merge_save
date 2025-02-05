@@ -9,3 +9,4 @@ X-Krita-Category=Export
 X-Krita-Name=Merge SVG Layers
 X-Krita-Description=Merges all vector layers and exports as an SVG
 X-Krita-EnabledByDefault=true
+name=KritaSvgMerge
