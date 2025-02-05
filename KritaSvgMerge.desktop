@@ -1,12 +1,8 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=Krita/PythonPlugin
-X-KDE-Library=KritaSvgMerge
-X-Krita-Manual=KritaSvgMerge
-X-Krita-Author=Simon Heggie
-X-Krita-Version=1.0
-X-Krita-Category=Export
-X-Krita-Name=Merge SVG Layers
-X-Krita-Description=Merges all vector layers and exports as an SVG
-X-Krita-EnabledByDefault=true
-name=KritaSvgMerge
+X-KDE-Library=svg_merge_save
+X-Python-2-Compatible=false
+X-Krita-Manual=svg_merge_save/Manual.html
+Name=Export Vector Layers as Flat SVG
+Comment=Adds a menu item in the File menu to export vector layers as a flat SVG.
