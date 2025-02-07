@@ -1,6 +1,9 @@
 # SVG -> Merge, Save.
-Scripting technology to solve the lack of support for multi-layer SVG file handling in Krita
-Focus for now is merging SVGs, and working towards combining that with a save/export.
+Takes all vectors layers in your document, merges them and allows you to save the now merged vector layer as a SVG.
+
+Application:
+
+Allows you to work non-destructively when working with vector content in Krita, without the workflow overhead of flattening and exporting every time you need an SVG version.
 
 
 TODO:
