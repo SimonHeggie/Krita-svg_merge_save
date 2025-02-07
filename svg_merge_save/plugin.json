@@ -1,0 +1,10 @@
+{
+    "name": "Export Vector Layers as Flat SVG",
+    "id": "svg_merge_save",
+    "author": "Simon Heggie",
+    "version": "1.2",
+    "description": "Adds a menu item in the File menu to export vector layers as a flat SVG.",
+    "category": "Import/Export",
+    "enabled": true,
+    "license": "GNU"
+}
